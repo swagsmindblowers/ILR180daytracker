@@ -1,0 +1,17 @@
+{
+  "skill_name": "uk-continuous-residence-tracker",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "I'm on a Skilled Worker visa working toward ILR. I've attached a CSV of my trips abroad (columns: Left UK, Back in UK). Can you check whether I'm on track for the 180-day rule and give me a report with a chart?",
+      "expected_output": "Parses the CSV, computes rolling 12-month absence totals via the script, reports current status (days used/remaining), flags any breach periods, includes caveats about discretion/COVID disregards, and delivers an HTML file with a report + timeline chart plus the persistent trip log CSV.",
+      "files": ["trips_ilr_ok.csv"]
+    },
+    {
+      "id": 1,
+      "prompt": "Here's an export of my travel calendar (ics file) for the last 3 years. I think I might have traveled too much for my ILR application, can you check?",
+      "expected_output": "Parses the ICS file into trip date ranges, runs the rolling-window calculation, and clearly reports whether/when the 180-day cap was breached, with a chart showing the trend and the threshold line, plus appropriate caveats.",
+      "files": ["travel_calendar.ics"]
+    }
+  ]
+}
